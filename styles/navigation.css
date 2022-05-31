@@ -1,0 +1,42 @@
+nav{
+    position: sticky;
+    bottom: 0;
+    z-index: 2;
+    padding: 1rem;
+    background: linear-gradient( var(--second), var(--first));
+}
+nav a{
+    color: var(--light);
+    text-shadow: 0 0 .5rem var(--dark);
+}
+nav .logo,
+nav .btn{
+    display: none;
+}
+.menu,
+.menu a{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: .5rem;
+}
+.menu a{
+    flex-direction: column;
+    font-size: 2rem;
+}
+.menu span{
+    font-size: 1rem;
+}
+@media screen and (min-width: 768px){
+    nav{
+        top: 0;
+    }
+    .menu{
+        flex-direction: column;
+    }
+}
+@media screen and (min-width: 1200px){
+    .menu{
+        flex-direction: row-reverse;
+    }
+}
