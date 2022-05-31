@@ -1,10 +1,11 @@
 /* Reglas Generales */
     @import url('https://fonts.googleapis.com/css2?family=Raleway');
     @import url('general.css');
+    @import url('layout.css');
 /* Cabecera (LESS) */
 
 /* Navegacion */
-
+    @import url('navigation.css');
 /* Contenido */
 
 /* Pie de Pagina (SASS) */

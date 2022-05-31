@@ -1,0 +1,39 @@
+/* Mobile First - Content First */
+body{
+    display: grid;
+    grid-template-areas: 
+        'header'
+        'main'
+        'footer'
+        'nav'
+}
+#header{
+    grid-area: header;
+}
+main{
+    grid-area: main;
+}
+#footer{
+    grid-area: footer;
+}
+nav{
+    grid-area: nav;
+}
+/* Medium Devices - Tablets */
+@media screen and (min-width: 768px){
+    body{
+        grid-template-areas: 
+            'nav    header'
+            'nav    main'
+            'nav    footer';
+    }
+}
+@media screen and (min-width: 1200px){
+    body{
+        grid-template-areas: 
+            'nav'
+            'header'
+            'main'
+            'footer';
+    }
+}
