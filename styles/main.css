@@ -1,5 +1,7 @@
-/* Reglas Generales */
+/* Enlaces Externos */
     @import url('https://fonts.googleapis.com/css2?family=Raleway');
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
+/* Reglas Generales */
     @import url('general.css');
     @import url('layout.css');
 /* Cabecera (LESS) */
@@ -9,3 +11,8 @@
 /* Contenido */
 
 /* Pie de Pagina (SASS) */
+
+/* Extra */
+main{
+    min-height: 100vh;
+}
