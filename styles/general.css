@@ -1,0 +1,46 @@
+/* Declaraciones */
+:root{
+    --first: #248;
+    --second: #36c;
+    --light: #eee;
+    --dark: #333;
+    --font: 'Raleway', 'calibri', sans-serif;
+}
+*{
+    box-sizing: border-box;
+    /*  Explicacion:
+        content-box
+            content-width = width
+            final-width = width + padding + border
+        border-box
+            final-width = width
+            content-width = width - padding - border
+    */
+    font-family: var(--font);
+}
+/* Margenes */
+body,
+h1,
+h2,
+h3,
+h4,
+header p,
+.menu{
+    margin: 0;
+}
+/* Bordes */
+iframe{
+    border: none;
+}
+/* Rellenos */
+.menu{
+    padding: 0;
+}
+/* Estilos */
+.menu{
+    list-style: none
+}
+.menu a,
+.social a{
+    text-decoration: none;
+}
