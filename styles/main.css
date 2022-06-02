@@ -5,7 +5,7 @@
     @import url('general.css');
     @import url('layout.css');
 /* Cabecera (LESS) */
-
+    @import url('header.css');
 /* Navegacion */
     @import url('navigation.css');
 /* Contenido */

@@ -1,0 +1,64 @@
+// Variables LESS
+    @path: '../assets/bg';
+    @images: 
+        'osx-big-sur.jpg',
+        'osx-big-sur-dark.jpg',
+        'osx-big-sur-light.jpg',
+        'osx-big-sur-night.jpg',
+        'osx-catalina.jpg',
+        'osx-catalina-night.jpg',
+        'osx-el-capitan.jpg',
+        'osx-high-sierra.jpg',
+        'osx-mavericks.jpg',
+        'osx-mojave.jpg',
+        'osx-mojave-night.jpg',
+        'osx-monterrey-dark.jpg',
+        'osx-monterrey-light.jpg',
+        'osx-mountain-lion.jpg',
+        'osx-sierra.jpg',
+        'osx-yosemite.jpg';
+    @col: 24;
+//  Nesting: Selectores que se implementan dentro de otros
+    #header{
+        .normalize(@p: 1rem);
+        .flexbox(column; @ai: center);
+        //Galeria de Imagenes
+        .gallery{
+            &:extend(.zeroize);
+        }
+    }
+
+//  Mixins: Selectores que se anidan como reglas
+    .zeroize{
+        .normalize;
+        list-style: none;
+    }
+
+//  Mixins Parametricos: Reciben valores para su aplicacion
+    .normalize(@m:0; @p:0; @b:0){
+        margin: @m;
+        border: @b;
+        padding: @p;
+    }
+    .flexbox(
+        @fd: row;
+        @jc: center;
+        @ai: stretch;
+        @fw: wrap;
+        @d: flex
+    ){
+        display: @d;
+        flex-direction: @fd;
+        justify-content: @jc;
+        align-items: @ai;
+        flex-wrap: @fw;
+    }
+// Mixin Recursivo: Reglas que se repiten en base a una condicion
+.grid(@i:1) when (@i <= @col){
+    .col-@{i}{
+        width: percentage( (@i / @col) )
+    }
+    .grid(@i + 1);
+}
+/*Sistema de grillas*/
+.grid;
