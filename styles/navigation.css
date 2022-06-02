@@ -16,14 +16,12 @@ nav .btn{
 .menu,
 .menu a{
     display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content: center;
+    text-align: center;
     gap: .5rem;
 }
 .menu a{
     flex-direction: column;
-    justify-content: space-evenly;
-    align-content: center;
     font-size: 2rem;
 }
 .menu span{
@@ -32,34 +30,12 @@ nav .btn{
 @media screen and (min-width: 768px){
     nav{
         top: 0;
-        max-width: 5rem;
-        transition: all .5s ease;
-        overflow: hidden;
-    }
-    nav:hover,
-    nav.active{
-        max-width: 200px;
     }
     .menu{
         flex-direction: column;
-        align-items: flex-start;
-    }
-    .menu [class*="fa-"]::before{
-        min-width: 3rem;
-        border:  .1rem solid #eee;
-        text-align: center;
-    }
-    .menu a{
-        flex-direction: row;
-        justify-content: flex-start;
-        gap: 1rem;
     }
 }
 @media screen and (min-width: 1200px){
-    nav,.menu{
-        max-width: 100%;
-        justify-content: center;
-    }
     .menu{
         flex-direction: row-reverse;
     }
