@@ -4,20 +4,23 @@ nav{
     z-index: 2;
     padding: 1rem;
     background: linear-gradient( var(--second), var(--first));
+    transition: all .5s ease-in;/* property duration timing delay*/
+}
+.bg{
+    background-color: blue;
 }
 nav a{
     color: var(--light);
     text-shadow: 0 0 .5rem var(--dark);
 }
-nav .logo,
-nav .btn{
+nav .logo{
     display: none;
 }
 .menu,
 .menu a{
     display: flex;
-    justify-content: center;
-    text-align: center;
+    justify-content: space-evenly;
+    align-items: center;
     gap: .5rem;
 }
 .menu a{
@@ -30,13 +33,47 @@ nav .btn{
 @media screen and (min-width: 768px){
     nav{
         top: 0;
+        max-width: 5rem;
+        max-height: 100vh; /* viewport height */
+        overflow: hidden;
+    }
+    nav:hover{
+        max-width: 10rem;
     }
     .menu{
         flex-direction: column;
+        align-items: flex-start;
     }
+    .menu a{
+        flex-direction: row;
+        gap: 1rem;
+    }
+    .menu [class*="fa-"]::before{
+        min-width: 3rem;
+        text-align: center;
+    }
+    /*                #id .class tag 
+        header{         0   0   1   }
+        .header{        0   1   0   }
+        #header{        1   0   0   }
+        .header h1{     0   1   1   }
+        nav .menu a{    0   1   2   }
+    */
 }
 @media screen and (min-width: 1200px){
+    nav,
+    nav:hover{
+        max-width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .5rem calc(50vw - 660px); /*top right bottom left*/
+    }
+    nav .logo{
+        display: block;
+    }
     .menu{
+        width: auto;
         flex-direction: row-reverse;
     }
 }
