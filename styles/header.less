@@ -19,10 +19,17 @@
         'osx-monterrey-dark.jpg',
         'osx-monterrey-light.jpg';
     @col: 24;
+    @font: ~'min(calc(2vw + .5rem), 3rem)'; // implementacion de valor CSS
 //  Nesting: Selectores que se implementan dentro de otros
     #header{
         .normalize(@p: 1rem);
         .flexbox(column; @ai: center);
+        position: relative;
+        min-height: min(100vh, 640px);
+        color: var(--light);
+        font-size: @font;
+        text-align: center;
+        text-shadow: 0 0 @font var(--dark);
         //Galeria de Imagenes
         .gallery{
             &:extend(.zeroize);
@@ -53,6 +60,18 @@
                     opacity: 1;
                     background-color: var(--light);
                 }
+            }
+        }
+        button.fas{
+            .normalize(@p: 2rem);
+            .position(absolute, @ha:bottom);
+            color: var(--light);
+            background-color: transparent;
+            &.prev{
+                left: 0;
+            }
+            &.next{
+                right: 0;
             }
         }
     }

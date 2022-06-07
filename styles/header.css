@@ -7,6 +7,12 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  position: relative;
+  min-height: min(100vh, 640px);
+  color: var(--light);
+  font-size: min(calc(2vw + .5rem), 3rem);
+  text-align: center;
+  text-shadow: 0 0 min(calc(2vw + .5rem), 3rem) var(--dark);
 }
 #header .gallery li {
   background: #333 var(--bg) center / cover no-repeat;
@@ -77,6 +83,23 @@
 #header .controls button.active {
   opacity: 1;
   background-color: var(--light);
+}
+#header button.fas {
+  margin: 0;
+  border: 0;
+  padding: 2rem;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 0;
+  color: var(--light);
+  background-color: transparent;
+}
+#header button.fas.prev {
+  left: 0;
+}
+#header button.fas.next {
+  right: 0;
 }
 .zeroize,
 #header .gallery {
