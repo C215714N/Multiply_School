@@ -11,7 +11,7 @@
 /* Contenido */
 
 /* Pie de Pagina (SASS) */
-
+    @import url('footer.css');
 /* Extra */
 main{
     min-height: 100vh;
