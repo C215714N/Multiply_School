@@ -530,7 +530,7 @@
   color: #333;
 }
 
-.text-success {
+.text-success, #footer #contact :is(input, select, textarea):valid + .valid {
   color: #3c6;
 }
 
@@ -538,7 +538,7 @@
   color: #ea3;
 }
 
-.text-danger {
+.text-danger, #footer #contact :is(input, select, textarea):not(:placeholder-shown):invalid + .valid {
   color: #c33;
 }
 
@@ -558,11 +558,11 @@
   border-color: #eee;
 }
 
-.border-dark {
+.border-dark, #footer #contact :is(input, select, textarea):focus {
   border-color: #333;
 }
 
-.border-success {
+.border-success, #footer #contact :is(input, select, textarea):valid {
   border-color: #3c6;
 }
 
@@ -570,7 +570,7 @@
   border-color: #ea3;
 }
 
-.border-danger {
+.border-danger, #footer #contact :is(input, select, textarea):not(:placeholder-shown):invalid {
   border-color: #c33;
 }
 
@@ -586,7 +586,7 @@
   background-color: #c26;
 }
 
-.bg-light {
+.bg-light, #footer #contact {
   background-color: #eee;
 }
 
@@ -643,6 +643,9 @@
 }
 
 #footer .social a {
+  margin: 0.5rem;
+  border-radius: 0.25rem;
+  padding: 0;
   width: 3rem;
   height: 3rem;
   background: var(--light) var(--bg) center/2rem no-repeat;
@@ -652,6 +655,11 @@
 #footer .social a:hover {
   transform: scale(1.1) translateY(-0.5rem) rotate(360deg);
   filter: none;
+  box-shadow: 0 0 0.5rem var(--dark);
+}
+
+#footer #contact .valid, #footer #contact :is(input, select, textarea) {
+  transition: all 0.5s ease;
 }
 
 #footer {
@@ -659,8 +667,38 @@
   border: 0;
   padding: 1rem;
 }
+#footer #contact {
+  margin: 1rem auto;
+  border-radius: 0.25rem;
+  padding: 1.5rem;
+  display: grid;
+  max-width: 720px;
+}
+#footer #contact label {
+  margin-top: 1rem;
+  max-height: 0;
+  overflow: hidden;
+}
+@media screen and (min-width: 768px) {
+  #footer #contact label {
+    max-height: 300px;
+  }
+}
+#footer #contact :is(input, select, textarea) {
+  outline: 0;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+}
+#footer #contact :is(input, select, textarea):focus + .valid {
+  max-height: 300px;
+}
+#footer #contact .valid {
+  max-height: 0;
+  overflow: hidden;
+}
 #footer .social {
   display: flex;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=footer.css.map */
