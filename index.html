@@ -67,6 +67,53 @@
         
     </main>
     <footer id="footer">
+        <!-- Mapa de Contacto -->
+        
+        <!-- Formulario de Contacto -->
+        <form action="" id="contact">
+            <h2>Dejanos tu Consulta</h2>
+            <label for="contact_name">Ingrese su Nombre Completo</label>
+            <input 
+                type="text" 
+                id="contact_name" 
+                maxlenght="50"
+                pattern="[a-z A-Z ñÑ]{3,50}"
+                placeholder="Nombre(*): Cristian Racedo" 
+                required>
+            <div class="valid">
+                Utilice solamente letras para el nombre, el mismo debe poseer entre 3 y 50 caracteres.
+            </div>
+            <label for="contact_email">Ingrese su Correo</label>
+            <input 
+                type="email" 
+                id="contact_email" 
+                minlength="8"
+                placeholder="Correo(*): CristianDRacedo@hotmail.com" 
+                required>
+            <div class="valid">
+                Coloque una direccion que posea al menos 8 caracteres y respete la estructura "usuario@servidor".
+            </div>
+            <label for="contact_phone">Ingrese su Telefono</label>
+            <input 
+                type="tel" 
+                id="contact_phone" 
+                pattern="\d{6,20}|[\(]\d{2,6}[\)]\d{3,6}[\-]\d{3,6}" 
+                placeholder="Telefono(*): (54)0303-456" 
+                required>
+            <div class="valid">
+                Coloque la caracteristica entre parentesis y un guion cada 3 a 6 digitos como en el ejemplo: (5411)0303-456. 
+                Aunque tambien puede ingresar solamente numeros.
+            </div>
+            <label for="contact_consult">Ingrese su Consulta</label>
+            <textarea 
+                id="contact_consult" 
+                minlenght="20" 
+                maxlength="1000" 
+                placeholder="Consulta(*): Buenas, necesito un presupuesto..." 
+                required></textarea>
+            <button class="btn">Enviar</button>
+        </form>
+        <!-- Redes Sociales -->
         <div class="social">
             <a class="facebook" href="https://facebook.com" target="_blank"></a>
             <a class="linkedin" href="https://linkedin.com" target="_blank"></a>
