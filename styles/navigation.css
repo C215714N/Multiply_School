@@ -67,7 +67,7 @@ nav .logo{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: .5rem calc(50vw - 660px); /*top right bottom left*/
+        padding: .5rem calc(50vw - 570px); /*top right bottom left*/
     }
     nav .logo{
         display: block;
