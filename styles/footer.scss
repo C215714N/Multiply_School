@@ -8,7 +8,28 @@
         'twitter',
         'whatsapp',
         'youtube';
+    $colors:
+        primary     #448,
+        secondary   #c26,
+        light   #eee,
+        dark    #333,
+        success #3c6,
+        warning #ea3,
+        danger  #c33,
+        info    #48f;
+    $attributes:
+        text    color,
+        border  border-color,
+        bg      background-color,
+        shadow  --shadow
+        shade   --shade;
     $col: 24;
+    $breakpoints:
+        sm  576px,
+        md  768px,
+        lg  992px,
+        xl  1200px,
+        xxl 1400px;
 
 // Mixins
 @mixin normalize( $m: 0, $p: 0, $b: 0, 
@@ -19,22 +40,39 @@
 }
 
 // Loops
+/*Redes Sociales*/
 @each $ico in $social{
     .#{$ico}{
         --bg: url('#{$path}/#{$ico}.svg');
     }
 }
+/*Sistema de Grillas Responsive*/
+@each $vn, $vw in $breakpoints{
+@media screen and (min-width: $vw){
+    @for $i from 1 through $col{
+    .col-#{$vn}-#{$i}{
+        width: percentage($i / $col);
+}   }   }   }
+/* Clases de Utilidad */
+@each $attr, $prop in $attributes{
+    @each $name, $value in $colors{
+        .#{$attr}-#{$name}{
+            #{$prop}: $value;
+}   }   }
+
 // Hidden Styles
-.icon{
+%icon{
     width: 3rem;
     height: 3rem;
     background: var(--light) var(--bg) center/2rem no-repeat;
     transition: all .5s ease-in;
+    filter: grayscale(80%);
     &:hover{
         transform:
             scale(1.1) // redimensionar (unidades)
             translateY(-.5rem) // desplazar (distancia)
             rotate(360deg); // girar (grados)
+        filter: none;
     }
 }
 
@@ -45,7 +83,7 @@
     .social{
         display: flex;
         a{
-            @extend .icon;
+            @extend %icon;
         }
     }
 }
