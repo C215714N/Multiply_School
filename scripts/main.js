@@ -11,6 +11,12 @@
 buttons.forEach( button => button.forEach( (btn,i) => {
     let control = controls[i].querySelectorAll('button');
     let gallery = galleries[i].querySelectorAll('li');
+    //  Controles Imagenes
+    control.forEach( (ctrl, item) => {
+        ctrl.addEventListener('click', () => {
+            getItem(control, item);
+            getItem(gallery, item);
+    }   )   }   )
     //  Controles Generales
     btn.addEventListener( 'click', () => {
         let dir =  btn.classList.contains('prev') ? 'prev' : 'next';
@@ -26,7 +32,6 @@ const getItem = (array, i) => {
             getDirection(el, i);
     }   }   
     newItem.classList.add(cName);
-    console.log(newItem, i)
 }
 
 const getDirection = (el, i) => {
@@ -35,5 +40,5 @@ const getDirection = (el, i) => {
             el.previousElementSibling || el.parentNode.lastElementChild ) : 
         i == 'next' ? ( 
             el.nextElementSibling || el.parentNode.firstElementChild ) : 
-        el.parentNode.childNodes[i]
+        el.parentNode.children[i]
 )   }
