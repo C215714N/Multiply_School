@@ -43,38 +43,38 @@
             }
         }
     }
-            //Galeria de Imagenes
-        .gallery{
-            &:extend(.zeroize);
-            li{
-                &:extend(.cover);
-                .bg(@images);
-                background: #333 var(--bg) center/cover no-repeat;
-                background-attachment: fixed;
-                opacity: 0;
-                transition: all 2s ease-out;
-                &.active{
-                    opacity: 1;
-                }
+    //Galeria de Imagenes
+    .gallery{
+        &:extend(.zeroize);
+        li{
+            &:extend(.cover);
+            .bg(@images);
+            background: #333 var(--bg) center/cover no-repeat;
+            background-attachment: fixed;
+            opacity: 0;
+            transition: all 2s ease-out;
+            &.active{
+                opacity: 1;
             }
         }
-        //Controles de Galeria
-        .controls{
-            .flexbox(@jc: center);
-            .position(absolute, 0, 1.5rem, @va:bottom);
-            width: 100%;
-            button{
-                .normalize(.2rem);
-                width: 2rem;
-                height: .2rem;
-                opacity: .5;
-                box-shadow: 0 0 .5rem var(--dark);
-                &.active{
-                    opacity: 1;
-                    background-color: var(--light);
-                }
+    }
+    //Controles de Galeria
+    .controls{
+        .flexbox(@jc: center);
+        .position(absolute, 0, 1.5rem, @va:bottom);
+        width: 100%;
+        button{
+            .normalize(.2rem);
+            width: 2rem;
+            height: .2rem;
+            opacity: .5;
+            box-shadow: 0 0 .5rem var(--dark);
+            &.active{
+                opacity: 1;
+                background-color: var(--light);
             }
         }
+    }
 //  Mixins: Selectores que se anidan como reglas
     .zeroize{
         .normalize;
@@ -111,14 +111,14 @@
         z-index: @z;
     }
 // Mixin Recursivo: Reglas que se repiten en base a una condicion
-.grid(@i:1) when (@i <= @col){
-    .col-@{i}{
-        width: percentage( (@i / @col) )
+    .grid(@i:1) when (@i <= @col){
+        .col-@{i}{
+            width: percentage( (@i / @col) )
+        }
+        .grid(@i + 1);
     }
-    .grid(@i + 1);
-}
-/*Sistema de grillas*/
-.grid;
+    /*Sistema de grillas*/
+    .grid;
 
 // Imagenes de Fondo
     .bg(@array; @i:1) when (@i <= length(@array)){
