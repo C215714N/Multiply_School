@@ -27,6 +27,13 @@ nav .logo{
     flex-direction: column;
     font-size: 2rem;
 }
+.menu a::before{
+    display: block;
+    transform-origin: bottom center;
+}
+.menu a:hover::before{
+    animation: jump 1s linear alternate infinite;
+}
 .menu span{
     font-size: 1rem;
 }
@@ -75,5 +82,17 @@ nav .logo{
     .menu{
         width: auto;
         flex-direction: row-reverse;
+    }
+}
+
+@keyframes jump{
+    0%{
+        transform: rotate(-30deg);
+    }
+    50%{
+        transform: translateY(.5rem);
+    }
+    100%{
+        transform: rotate(30deg);
     }
 }

@@ -54,3 +54,78 @@
 .masonry :nth-child(2n){
     grid-row: span 2;
 }
+/* Scalable vector Graphics */
+    rect{
+        fill: #c36;
+    }
+    circle{
+        fill: hsla(260, 50%, 50%, .8);
+    }
+    polygon{
+        fill: rgba(51, 204, 68, .8);
+    }
+    line{
+        stroke: darkslateblue;
+        stroke-width: .25rem;
+    }
+    ellipse{
+        fill: transparent;
+        stroke: var(--first);
+        stroke-width: .25rem;
+    }
+/* Animaciones */
+.balance{
+    animation: balance 5s ease-out 2s alternate infinite;
+}
+.move{
+    animation: move 5s ease-out 2s alternate infinite;
+}
+.time{
+    animation: time 2s linear 2s alternate infinite;
+    transform-origin: bottom center;
+}
+.angle{
+    transform: rotate(45deg);
+    transform-origin: center;
+}
+.rotate{
+    animation: rotate 5s linear 2s infinite;
+    transform-origin: center;
+}
+
+/* Fotogramas */
+@keyframes balance {
+    from{
+        transform: rotate(7.5deg);
+    }
+    to{
+        transform: rotate(-10deg)
+    }
+}
+@keyframes move {
+    from{
+        transform: 
+        translate(20%)
+        rotate(10deg);
+    }
+    to{
+        transform: 
+        translate(0)
+        rotate(-10deg);
+    }
+}
+@keyframes time {
+    from{
+        transform: 
+            rotate(-60deg);
+    }
+    to{
+        transform: 
+            rotate(60deg);
+    }
+}
+@keyframes rotate{
+    to{
+        transform: rotate(360deg);
+    }
+}
