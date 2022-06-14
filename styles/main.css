@@ -9,7 +9,7 @@
 /* Navegacion */
     @import url('navigation.css');
 /* Contenido */
-
+    @import url('content.css');
 /* Pie de Pagina (SASS) */
     @import url('footer.css');
 /* Extra */

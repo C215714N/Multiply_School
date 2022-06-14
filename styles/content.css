@@ -1,0 +1,38 @@
+/* Grilla Dinamica */
+.playlist{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%,320px), 1fr));
+    /* 
+        repeat(a, b)
+            a: cantidad de veces
+            b: tamaño de las celdas
+        auto-fill: completa con celdas que cubran el espacio
+        auto-fit: rellena con celdas hasta cubrir el espacio
+        
+        minmax(1,2)
+        1: valor minimo
+        2: valor maximo
+    */
+    gap: .5rem;
+    padding: .5rem;
+}
+.playlist li{
+    position: relative;
+}
+.playlist .control{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: .5rem;
+}
+.playlist :is(
+    img,
+    video,
+    iframe
+){
+    width: 100%;
+    height: 100%;
+    border-radius: .25rem;
+    background: #000;
+    object-fit: cover;
+}

@@ -128,3 +128,12 @@
         }
         .bg(@array; @i + 1);
     }
+
+// Sumarizacion de atributos
+.background(@i: 0) when (@i <= 6){
+    --bg+: hsl(@i * 60, 50%, 50%);
+    .background(@i + 1);
+}
+#footer{
+    .background;
+}

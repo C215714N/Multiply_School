@@ -84,6 +84,8 @@
 // Nesting
 #footer{
     @include normalize($p: 1rem);
+    background: linear-gradient(to right, var(--bg)) 500%/500%;
+    animation: bg 180s linear infinite; // name duration timing delay count direction
     // Formulario de Contacto
     #contact{
         @include normalize(1rem auto, 1.5rem, .25rem, border-radius);
@@ -125,5 +127,33 @@
         a{
             @extend %icon;
         }
+    }
+}
+#header{
+    .header{
+        perspective: 300px;
+        perspective-origin: top center;
+        h1{
+            animation: perspective 10s ease-in 0s;
+            animation-fill-mode: forwards;
+        }
+    }
+}
+// Animaciones
+@keyframes bg{
+    from{
+        background-position: 0;
+    }
+}
+@keyframes perspective{
+    from{
+        transform:
+        translateZ(15rem);
+    }
+    to{
+        transform:
+            translateZ(0)
+            rotateY(360deg)
+            rotateX(15deg);
     }
 }

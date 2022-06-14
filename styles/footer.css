@@ -666,6 +666,8 @@
   margin: 0;
   border: 0;
   padding: 1rem;
+  background: linear-gradient(to right, var(--bg)) 500%/500%;
+  animation: bg 180s linear infinite;
 }
 #footer #contact {
   margin: 1rem auto;
@@ -699,6 +701,28 @@
 #footer .social {
   display: flex;
   justify-content: center;
+}
+#header .header {
+  perspective: 300px;
+  perspective-origin: top center;
+}
+#header .header h1 {
+  animation: perspective 10s ease-in 0s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes bg {
+  from {
+    background-position: 0;
+  }
+}
+@keyframes perspective {
+  from {
+    transform: translateZ(15rem);
+  }
+  to {
+    transform: translateZ(0) rotateY(360deg) rotateX(15deg);
+  }
 }
 
 /*# sourceMappingURL=footer.css.map */

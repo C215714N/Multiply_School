@@ -25,7 +25,8 @@ h2,
 h3,
 h4,
 header p,
-.menu{
+.menu,
+.playlist{
     margin: 0;
 }
 /* Bordes */
@@ -33,11 +34,13 @@ iframe{
     border: none;
 }
 /* Rellenos */
-.menu{
+.menu,
+.playlist{
     padding: 0;
 }
 /* Estilos */
-.menu{
+.menu,
+.playlist{
     list-style: none
 }
 .menu a,
