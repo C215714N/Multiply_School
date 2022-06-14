@@ -21,7 +21,7 @@
 }
 .playlist .control{
     position: absolute;
-    top: 0;
+    bottom: 0;
     right: 0;
     padding: .5rem;
 }
@@ -35,4 +35,22 @@
     border-radius: .25rem;
     background: #000;
     object-fit: cover;
+}
+.masonry :is(
+    img,
+    video,
+    iframe
+){
+    border: .5rem solid var(--dark);
+    transition: all .5s ease-in;
+}
+.masonry :hover{
+    transform: 
+        scale(1.1);
+}
+.masonry :nth-child(4n){
+    grid-column: span 2;
+}
+.masonry :nth-child(2n){
+    grid-row: span 2;
 }

@@ -18,6 +18,9 @@
     */
     font-family: var(--font);
 }
+body{
+    overflow-x: hidden;
+}
 /* Margenes */
 body,
 h1,
